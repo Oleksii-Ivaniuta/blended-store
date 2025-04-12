@@ -1,21 +1,22 @@
 //Описана робота модалки - відкриття закриття і все що з модалкою повʼязано
-const modal = document.querySelector('.modal');
+
+import { refs } from './refs';
 
 export function openModal() {
-  modal.classList.add('modal--is-open');
+  refs.modal.classList.add('modal--is-open');
 
   document.addEventListener('keydown', handleEscapeClose);
-  modal.addEventListener('click', handleBackdropClickClose);
+  refs.modal.addEventListener('click', handleBackdropClickClose);
 }
 
 export function closeModal() {
-  modal.classList.remove('modal--is-open');
+  refs.modal.classList.remove('modal--is-open');
   removeEventListeners();
 }
 
 function removeEventListeners() {
   document.removeEventListener('keydown', handleEscapeClose);
-  modal.removeEventListener('click', handleBackdropClickClose);
+  refs.modal.removeEventListener('click', handleBackdropClickClose);
 }
 
 function handleEscapeClose(event) {
@@ -23,5 +24,5 @@ function handleEscapeClose(event) {
 }
 
 function handleBackdropClickClose(event) {
-  if (event.target === modal) closeModal();
+  if (event.target === refs.modal) closeModal();
 }
