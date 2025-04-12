@@ -1,5 +1,5 @@
 //Функцію для створення, рендеру або видалення розмітки
-import refs from './refs';
+import { refs } from './refs';
 
 // const { categoriesList, productsList } = refs;
 
